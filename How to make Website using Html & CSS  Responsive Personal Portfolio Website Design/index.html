@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Creative Portafolio Website Design | Responsive Design</title>
+</head>
+<body>
+    <section class="banner">
+        <header>
+            <a href="#" class="logo">Portafolio</a>
+            <div class="toggle"></div>
+        </header>
+
+        <img src="man.png" alt="" class="men">
+        <div class="content">
+            <div class="contentBox">
+                <h4>Hello,</h4>
+                <h2>I'm Jay Thompson</h2>
+                <h3>Professional Web Designer</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita assumenda nam perferendis sapiente delectus doloribus placeat quo sint. Tenetur vero recusandae incidunt rem culpa ab amet nisi nemo nam dolore!</p>
+                <a href="#">Hire Me</a>
+                <a href="#">Download CV</a>
+            </div>
+        </div>
+        <ul class="sci">
+            <li><a href="#"><img src="facebook.png" alt=""></a></li>
+            <li><a href="#"><img src="twitter.png" alt=""></a></li>
+            <li><a href="#"><img src="instagram.png" alt=""></a></li>
+        </ul>
+
+        <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Resume</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+
+        <img src="1.png" alt="" class="elements" data-speed="8">
+        <img src="2.png" alt="" class="elements" data-speed="6">
+        <img src="3.png" alt="" class="elements" data-speed="-10">
+        <img src="4.png" alt="" class="elements" data-speed="-6">
+    </section>
+
+    <script>
+        const menuToggle = document.querySelector('.toggle')
+        const banner = document.querySelector('.banner')
+        menuToggle.addEventListener('click',()=>{
+            menuToggle.classList.toggle('active')
+            banner.classList.toggle('active')
+        })
+        function parallax(e){
+            this.querySelectorAll('.elements').forEach(layer =>{
+                const speed = layer.getAttribute('data-speed')
+                const x = (window.innerWidth - e.pageX*speed)/100
+                layer.style.transform = `translateX(${x}px)`
+            })
+        }
+        document.addEventListener("mousemove",parallax)
+    </script>
+</body>
+</html>
